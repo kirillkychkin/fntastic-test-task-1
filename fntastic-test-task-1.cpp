@@ -2,10 +2,19 @@
 //
 
 #include <iostream>
+#include <string>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::string in_row;
+    int row_length;
+
+    std::cout << "Please enter input row:\n";
+    std::cin >> in_row;
+
+    row_length = in_row.length();
+    std::cout << row_length;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
