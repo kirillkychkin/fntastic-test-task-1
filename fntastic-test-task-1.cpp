@@ -40,7 +40,7 @@ int main()
     std::string in_row;
 
     std::cout << "Please enter input row:\n";
-    std::cin >> in_row;
+    std::getline(std::cin, in_row);
 
     std::map <char, int> dict = create_dictionary(in_row);
 
