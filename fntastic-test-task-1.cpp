@@ -4,6 +4,7 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <cctype>
 
 std::map<char, int> create_dictionary(std::string row)
 {
@@ -11,7 +12,7 @@ std::map<char, int> create_dictionary(std::string row)
 
     for (int i = 0; i < row.length(); ++i)
     {
-        dict[row[i]] += 1;
+        dict[tolower(row[i])] += 1;
     }
 
     return dict;
