@@ -17,6 +17,24 @@ std::map<char, int> create_dictionary(std::string row)
     return dict;
 }
 
+std::string convert_row(std::string row, std::map <char, int> dict)
+{
+    std::string output_row;
+
+    for (int i = 0; i < row.length(); ++i)
+    {
+        if (dict[row[i]] == 1)
+        {
+            output_row.append("(");
+        }
+        else {
+            output_row.append(")");
+        }
+    }
+
+    return output_row;
+}
+
 int main()
 {
     std::string in_row;
@@ -26,7 +44,7 @@ int main()
 
     std::map <char, int> dict = create_dictionary(in_row);
 
-
+    std::cout << convert_row(in_row, dict);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
