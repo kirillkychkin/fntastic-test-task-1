@@ -6,18 +6,29 @@
 #include <string>
 #include <cctype>
 
+/*
+* Функция принимает на вход строку типа string,
+* Возвращает словарь типа map<char, int>, где символ является ключом,
+* а значением является количество раз, которое символ встречается в строке
+*/
 std::map<char, int> create_dictionary(std::string row)
 {
     std::map <char, int> dict;
 
     for (int i = 0; i < row.length(); ++i)
     {
+        // tolower() используется для игнорирования заглавных букв при подсчете
         dict[tolower(row[i])] += 1;
     }
 
     return dict;
 }
 
+/*
+* Функция принимает на вход исходную строку string, которую необходимо сконвертировать
+* и словарь map<char, int>, сгенерированный функцией create_dictionary
+* Возвращает конвертированную строку string
+*/
 std::string convert_row(std::string row, std::map <char, int> dict)
 {
     std::string output_row;
