@@ -2,18 +2,30 @@
 //
 
 #include <iostream>
+#include <map>
 #include <string>
+
+std::map<char, int> create_dictionary(std::string row)
+{
+    std::map <char, int> dict;
+
+    for (int i = 0; i < row.length(); ++i)
+    {
+        dict[row[i]] += 1;
+    }
+
+    return dict;
+}
 
 int main()
 {
     std::string in_row;
-    int row_length;
 
     std::cout << "Please enter input row:\n";
     std::cin >> in_row;
 
-    row_length = in_row.length();
-    std::cout << row_length;
+    std::map <char, int> dict = create_dictionary(in_row);
+
 
 }
 
